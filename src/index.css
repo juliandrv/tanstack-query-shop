@@ -1,9 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin './hero.ts';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
-
-
-html,body {
+html,
+body {
   background-color: black;
+}
+
+.active {
+  @apply text-blue-500;
+  transition: all 0.2s;
+}
+
+.inactive {
+  @apply text-gray-100;
+  transition: all 0.2s;
 }
