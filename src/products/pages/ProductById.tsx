@@ -1,13 +1,11 @@
 import { ProductList, useGetProducts } from "..";
 
-export const WomensPage = () => {
-  const { isLoading, products } = useGetProducts({
-    filterKey: "women's clothing",
-  });
+export const ProductById = () => {
+  const { isLoading, products } = useGetProducts({});
 
   return (
     <div className="flex-col">
-      <h1 className="text-2xl font-bold">Productos para mujeres</h1>
+      <h1 className="text-2xl font-bold">Todos los productos</h1>
 
       {isLoading && <p>Cargando...</p>}
 
