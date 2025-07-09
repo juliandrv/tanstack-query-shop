@@ -8,6 +8,10 @@ export interface Product {
   rating?: Rating;
 }
 
+export type ProductLike = Omit<Product, "id" | "rating"> & {
+  id?: number;
+};
+
 export interface Rating {
   rate: number;
   count: number;

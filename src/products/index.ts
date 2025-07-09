@@ -6,8 +6,9 @@ export { ProductList } from "./components/ProductList";
 export { useGetProducts } from "./hooks/useGetProducts";
 export { useGetProduct } from "./hooks/useGetProduct";
 export { usePrefetchProduct } from "./hooks/usePrefetchProduct";
+export { useProductMutation } from "./hooks/useProductMutation";
 
-export type { Product } from "./interfaces/product";
+export type { Product, ProductLike } from "./interfaces/product";
 
 export { StoreLayout } from "./layout/StoreLayout";
 
