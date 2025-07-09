@@ -1,15 +1,22 @@
-import { ProductList, useGetProducts } from "..";
+import { useParams } from "react-router-dom";
+import { useGetProduct } from "../hooks/useGetProduct";
+import { ProductCard } from "../components/ProductCard";
 
 export const ProductById = () => {
-  const { isLoading, products } = useGetProducts({});
+  const { id } = useParams();
+  const { product, isLoading } = useGetProduct({
+    id: Number(id),
+  });
+
+  window.scrollTo(0, 0);
 
   return (
-    <div className="flex-col">
-      <h1 className="text-2xl font-bold">Todos los productos</h1>
+    <div className="flex-col m-auto mt-8">
+      <h1 className="text-2xl font-bold mb-4 text-center">Producto</h1>
 
-      {isLoading && <p>Cargando...</p>}
+      {isLoading ? <h1>Cargando...</h1> : null}
 
-      <ProductList products={products} />
+      {product && <ProductCard product={product} fullDescription />}
     </div>
   );
 };
